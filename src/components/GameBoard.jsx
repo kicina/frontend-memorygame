@@ -28,10 +28,11 @@ function GameBoard({ cards, setCards, turn, setTurn, scores, setScores, players 
         setTimeout(() => {
           setSelected([]);
           if (players > 1) setTurn((turn + 1) % players);
-        }, 2000);
+        }, 1000);
       }
     }
   };
+  
 
   return (
     <div className={`board ${cards.length === 36 ? "grid-6x6" : "grid-4x4"}`}>
@@ -45,7 +46,10 @@ function GameBoard({ cards, setCards, turn, setTurn, scores, setScores, players 
           src={card.src} 
         />
       ))}
+      
+      
     </div>
+    
   );
 }
 

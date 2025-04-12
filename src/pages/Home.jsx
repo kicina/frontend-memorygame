@@ -13,12 +13,21 @@ function Home() {
   };
 
   return (
-    <div className="home">
-      <h1>Memory Game</h1>
+    <div className="flex justify-center flex-col items-center h-screen bg-[#152938] ">
+      <h1 className="font-bold text-[40px] text-[#FCFCFC]">memory</h1>
+    <div className="flex w-[654px] h-[559px] justify-center flex-col rounded-[20px]  bg-[#FFFFFF] text-white">
+      
       <h3>Game Type</h3>
-      <button onClick={() => setGameType("numbers")} className={gameType === "numbers" ? "selected" : ""}>Numbers</button>
-      <button onClick={() => setGameType("images")} className={gameType === "images" ? "selected" : ""}>Images</button>
-
+      <div className="flex justify-evenly gap-4 mb-4">
+      <button onClick={() => setGameType("numbers")} 
+      className={gameType === "radius-[26px] text-[24px] font-bold bg-[#304859] w-[256px] h-[52px] text-[#FCFCFC]" 
+      ?
+       "selected" 
+      :
+        "radius-[26px] text-[24px] font-bold text-[#FCFCFC] bg-[#304859] w-[256px] h-[52px]  "
+        }>Numbers</button>
+      <button onClick={() => setGameType("images")} className={gameType === "radius-[26px] text-[24px] bg-[#304859] w-[256px] h-[52px] text-[#FCFCFC] font-bold" ? "selected" : "radius-[26px] text-[24px] font-bold bg-[#304859] w-[256px] h-[52px] text-[#FCFCFC]"}>Images</button>
+</div>
       <h3>Number of Players</h3>
       {[1, 2, 3, 4].map((num) => (
         <button key={num} onClick={() => setPlayers(num)} className={players === num ? "selected" : ""}>
@@ -32,6 +41,7 @@ function Home() {
 
 
       <button className="start-btn" onClick={startGame}>Start Game</button>
+    </div>
     </div>
   );
 }
